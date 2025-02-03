@@ -2,6 +2,8 @@
 const { error } = require("console");
 const fs = require("fs");
 
+
+//write File
 const file = fs.writeFile("details.txt", "Hello this is backend dev", (error) => {
     if (error) {
         console.log(error)
@@ -10,6 +12,7 @@ const file = fs.writeFile("details.txt", "Hello this is backend dev", (error) =>
     }
 })
 
+//ReadFile
 const Readfile = fs.readFile('details.txt', 'utf-8', (error, data) => {
     if (error) {
         console.log(error)
@@ -18,7 +21,7 @@ const Readfile = fs.readFile('details.txt', 'utf-8', (error, data) => {
     }
 });
 
-
+//Append File
 const appendfile = fs.appendFile("details.txt", " This is Appended Data", (error) => {
     if (error) {
         console.log(error)
@@ -27,6 +30,7 @@ const appendfile = fs.appendFile("details.txt", " This is Appended Data", (error
     }
 })
 
+//File Rename
 const rename = fs.rename("details.txt", "Text.txt", (error) => {
     if (error) {
         console.log(error)
@@ -36,6 +40,8 @@ const rename = fs.rename("details.txt", "Text.txt", (error) => {
 });
 console.log(rename)
 
+
+//Delete file or unlink file
 const deletefile = fs.unlink('Text.txt', (error) => {
     if (error) {
         console.log(error)
@@ -44,7 +50,7 @@ const deletefile = fs.unlink('Text.txt', (error) => {
     }
 })
 
-//http
+//http sever create
 const http = require("http");
 const server = http.createServer((req, res) => {
     if (req.url === '/home') {
